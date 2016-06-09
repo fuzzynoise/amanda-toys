@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+"""
+drydump   An `amdump --dry-run` kludge.
+
+Used for testing the effective size of an uncompressed DLE dump based on amdump's understanding of that concept.
+Similar to running `du -ch --exclude=<pattern> <topdir>` but gives output based on disklist.conf.
+Output includes that entire index. There are a number of ways to parse over said output (e.g. litterally any scripting language).
+Feel free to invent a way to parse over that output.
+
+This software is not licenced at all. If your environment is somehow configured to have any of this run as expected:
+that is a coincidence. If this accidentally executes any licenced software on your machine that is an error.
+No support is offered for this software, AT ALL. In fact, it's for education purposes only and should not be executed.
+But you're reading a long string in the source...so...
+@AUTH Mitch
+@VERSION 0.0.0h!
+"""
+import sys, os, re, getopt
+def main():
+    exit 0
+if __name__ == "__main__":
+    main()
