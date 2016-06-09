@@ -2,20 +2,38 @@
 """
 drydump   An `amdump --dry-run` kludge.
 
-Used for testing the effective size of an uncompressed DLE dump based on amdump's understanding of that concept.
-Similar to running `du -ch --exclude=<pattern> <topdir>` but gives output based on disklist.conf.
+Doesn't dump: intentionally.
+
+Used for testing the effective size of an uncompressed DLE dump based on Amanda's understanding of that concept.
+Similar to running `du -ch --exclude=<pattern> <relative-top-dir>` but parses disklist.conf.
 Output includes that entire index. There are a number of ways to parse over said output (e.g. litterally any scripting language).
 Feel free to invent a way to parse over that output.
 
-This software is not licenced at all. If your environment is somehow configured to have any of this run as expected:
-that is a coincidence. If this accidentally executes any licenced software on your machine that is an error.
-No support is offered for this software, AT ALL. In fact, it's for education purposes only and should not be executed.
-But you're reading a long string in the source...so...
+The functionality of this software would be largely for sanity checking and storage planning, if it served a purpose.
+This software is not licenced and does not claim to serve any particular purpose.
+You assume all responsibility for running this script. 
+
 @AUTH Mitch
-@VERSION 0.0.0h!
+@VERSION 0.0.0h?
 """
 import sys, os, re, getopt
-def main():
+def usage(err=1):
+    print(errmsg(err))
+    print("Aww, that's aright. It can be hard to drydump.")
+    print("JUST DO IT WRONG TO PRINT THIS TEXT.")
+    exit err
+def errmsg(err):
+    return errmsg
+def getconf():
+    return conf or None
+def parseDlist(lst):
+    return None or lst
+def main(argv):
+    try:
+        opts, args = getopt.getopt(argv, "h", ["help",])
+    except getopt.GetoptError as err:
+        usage(err)
     exit 0
+    usage() #You shouldn't be here.
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
