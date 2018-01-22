@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#TODO: actual error reporting, sanity checking...
+
+which watch || echo "${0} won't work if you don't have watch..."
+watch amstatus "${1}"
